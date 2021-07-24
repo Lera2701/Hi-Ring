@@ -60,20 +60,3 @@ function Decrypt($text) {
     $original_plaintext = openssl_decrypt($text, $cipher, $key, $options=0, $iv, hex2bin($tag));
     return $original_plaintext;
 }
-/*$pass = [];
-$pass[] = '111';
-$pass[] = '123123';
-$pass[] = '321321';
-$pass[] = '333333';
-$pass[] = '444444';
-$pass[] = '666666';
-$pass[] = '000000';
-foreach ($pass as $p) {
-    $data = Encrypt($p);
-    echo $data.' - ';
-    echo Decrypt($data).'<br>';
-}*/
-
-
-
-
