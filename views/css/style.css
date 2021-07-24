@@ -1,0 +1,264 @@
+@import url('https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.2.0/css/font-awesome.min.css');
+
+*{
+	font-family: 'Open Sans', 'sans-serif', 'FontAwesome';
+}
+#out {
+cursor: pointer;
+}
+body{
+    background: rgb(52, 56, 61);
+	display: flex;
+	justify-content: center;
+}
+.wrapper {
+	background-color: rgb(28, 30, 33);
+	width: 80%;
+	height: 1000px;
+	display: flex;
+	border: 1px solid rgb(0 126 165 / 75%);
+	color: darkgray;
+	flex-direction: column;
+}
+#lang {
+	cursor: pointer;
+}
+.navs a{
+	color: darkgray;
+	text-decoration: none;
+}
+.content {
+	margin-left: 35px;
+	margin-right: 35px;
+}
+table, th, td {
+	border: 1px solid black;
+}
+th {
+	cursor: pointer;
+}
+.content #callback {
+	margin-top: 40px;
+}
+.notification {
+	position: absolute;
+	width: 300px;
+	height: 250px;
+	background-color: #f0f8ffe6;
+	top: 200px;
+	font-size: 17px;
+	text-align: center;
+	display: flex;
+	align-items: center;
+	z-index: 10;
+	padding: 10px;
+	overflow-y: auto;
+	flex-direction: column;
+	visibility: hidden;
+}
+.notification.shown {
+	visibility: visible;
+}
+.notification p {
+	border-bottom: solid 1px;
+	margin-bottom: 0;
+}
+.notification a {
+	text-decoration: none;
+	color: unset;
+	width: 100%;
+}
+.navs {
+	width: 15%;
+	border-right: 1px solid rgb(0 126 165 / 75%);
+	text-align: center;
+}
+.main {
+	display: flex;
+}
+table tr[data-id]:hover, .notification p:hover {
+	background-color: #008b8b24;
+}
+.nav, .navNote {
+	margin-bottom: 20px;
+	font-size: 18px;
+}
+.nav:hover, .navNote:hover {
+	color: rgb(0, 126, 165);
+	text-shadow: 0 0 10px rgb(0, 126, 165);
+	cursor: pointer;
+}
+tr.selected {
+	background-color: rgba(0, 139, 139, 0.14);
+}
+tr {
+	background-color: rgb(28, 30, 33);
+}
+.editBlock {
+	margin-left: 20px;
+	margin-top: 10px;
+}
+.edit, .delete, .save, .add {
+	margin-bottom: 15px;
+}
+#additional input, #additional_works input {
+	width: 115px;
+	display: none;
+}
+#additional input.shown, #additional_works input.shown {
+	display: block;
+}
+td input {
+	width: 91%;
+	background-color: #f0f8ff00;
+	border: unset;
+}
+.edit:hover, .delete:hover, .save:hover, .add:hover {
+	color: rgb(0, 126, 165);
+	text-shadow: 0 0 10px rgb(0, 126, 165);
+	cursor: pointer;
+}
+#saveAdd, #additional, #saveTask, #additionalTask, #additional_works, #saveAdd_works {
+	display: none;
+}
+#saveAdd, #saveAdd_works {
+	margin-top: 15px;
+}
+#saveAdd.shown, #saveAdd_works.shown, #additional.shown, #saveTask.shown, #additionalTask.shown, #additional_works.shown {
+	display: block;
+}
+#saveTask, #addTask {
+	margin-top: 15px;
+}
+.dropdown {
+	width: 120px;
+	height: 20px;
+	font-size: 17px;
+	background: #ffffff94;
+}
+option {
+	background: #ffffff94;
+}
+.table {
+	display: flex;
+}
+.header {
+	height: 70px;
+	width: 100%;
+	border-bottom: 1px solid rgb(0 126 165 / 75%);
+	margin-bottom: 20px;
+	display: flex;
+	justify-content: space-around;
+}
+.header h2 {
+	margin-left: 20px;
+	color: rgb(0 126 165 / 75%);
+}
+h1{
+	color: rgb(0, 126, 165);
+	margin: 20px auto 0;
+	width: 200px;
+	text-align: center;
+}
+#wrapper{
+	position: absolute;
+	width: 320px;
+	left: 50%;
+	margin-left: -160px;
+	top: 50%;
+	margin-top: -75px;
+}
+
+/* === Sign in Form === */
+form {
+	height: 90px;
+	width: 300px;
+	border-radius: 8px;
+	position: relative;
+}
+#signin::before {
+	display: block;
+	position: relative;
+	height: 2px;
+	background: rgb(0 126 165 / 75%);
+	content: '';
+	top: 69px;
+	margin-left: 20px;
+	z-index: 1;
+}
+form input:first-of-type{
+	border-top-right-radius: 8px;
+	border-top-left-radius: 8px;
+}
+form input:last-of-type{
+	border-bottom-right-radius: 8px;
+	border-bottom-left-radius: 8px;
+}
+form  input[type="text"], form  input[type="password"], form button[type="submit"], form  input[type="email"]{
+	background: rgb(28, 30, 33);
+	box-shadow: inset -100px -100px 0 rgb(28, 30, 33); /*Prevent yellow autofill color*/
+	color: rgb(52, 56, 61);
+}
+#callback input {
+	box-shadow: inset -100px -100px 0 rgb(52 56 61 / 45%);
+	border-bottom: 1px solid;
+}
+#callback input[type="email"] {
+	border: unset;
+}
+#callback  button[type="submit"] {
+	top: 74px;
+}
+form  input[type="text"], form  input[type="password"], form  input[type="email"]{
+	position: relative;
+	display: block;
+	width: 303px;
+	height: 70px;
+	border: 0;
+	outline: 0;
+	top: -2px;
+	padding: 0 0 0 20px;
+	font-size: 18px;
+	font-weight: 700;
+}
+form  input[type="text"]:focus, form  input[type="password"]:focus{
+	color: rgb(255, 255, 255);
+}
+form button[type="submit"]{
+	display: block;
+	position: absolute;
+	width: 60px;
+	height: 60px;
+	color: rgb(52, 56, 61);
+	border-radius: 50px;
+	outline: 0;
+	z-index: 2;
+	top: 40px;
+	right: -56px;
+	border: 6px solid rgb(52, 56, 61);
+	font-size: 25px;
+	text-indent: 0px;
+	padding-left: 9px;
+	padding-bottom: 3px;
+	text-align: center;
+}
+form button[type="submit"]:hover{
+	color: rgb(0, 126, 165);
+	text-shadow: 0 0 10px rgb(0, 126, 165);
+	cursor: pointer;
+}
+#wrapper p {
+	color: rgb(79, 85, 97);
+	padding: 0 20px;
+	font-weight: 700;
+	font-size: 17px;
+	margin: 5px 0 5px 0;
+}
+#wrapper p > a{
+	color: rgb(111, 119, 135);
+	text-decoration: none;
+}
+#wrapper p > a:hover{
+	border-bottom: 1px solid;
+	color: rgb(0, 126, 165);
+}
